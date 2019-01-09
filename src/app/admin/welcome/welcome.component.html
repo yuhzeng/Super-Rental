@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+      
+    <img class="card-img-top" src="http://hdqwalls.com/wallpapers/city-buildings-lunar-sunset-p4.jpg"
+      alt="">
+
+      <div class="card-img-overlay">
+          <h1 class="text-wrap text-light">Rental Management Dashboard</h1>
+          <!-- <p class="card-text d-none d-lg-block ">Pay your rent online, enter a maintenance service request or browse our calendar for upcoming
+              activities.
+    
+              Super Rentals Management is dedicated to exceeding our resident’s expectations. In our communities across the
+              universe, we strive to provide the most desirable, well-maintained apartment homes by providing exceptional
+              customer service.
+    
+              Please contact your local community office should the need arise</p> -->
+      </div>
+      
+    <div class="card-body">
+      <h4 class="card-title">WELCOME</h4>
+      <hr class="my-2 bg-dark">
+      <br>
+      <!-- INFO CARDS -->
+      <div class="card-group">
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Active Tenants</h5>
+                <h6 class="card-subtitle mb-2 text-muted">(*Hero Families)</h6>
+                <p class="currency">{{ numOfTenants }}</p>
+              </div>
+              <div class="card-footer">
+                <button type="button" routerLink="lease" name="tenants" id="quickpaytenants" class="btn btn-info btn-sm">
+                      View Tenants
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Service Requests</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Open Requests</h6>
+                  <p class="currency"> {{ serviceRequestsOpen }} </p>
+              </div>
+              <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Service Requests</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Closed Requests</h6>
+                  <p class="currency"> {{ serviceRequestsClosed }} </p>
+              </div>
+              <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Community</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Upcoming Events</h6>
+                  <p class="currency">{{ numberOfEvents }}</p>
+              </div>
+              <div class="card-footer">
+                  <button type="button" routerLink="community" name="quickpay" id="quickpay" class="btn btn-info btn-sm">ALL EVENTS</button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Enquires</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Open Enquires</h6>
+                  <p class="currency"> {{ enquiriesOpen }} </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Enquires</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Closed Enquires</h6>
+                  <p class="currency">{{ enquiriesClosed }} </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div> -->
+            </div>
+          </div>
+
+
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Appointments</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Upcoming Appointments</h6>
+                  <p class="currency"> {{ upcomingAppointments }} </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div> -->
+            </div>
+          </div>
+
+          
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Payments Received</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Total Received</h6>
+                  <p class="currency"> ${{ totalPmtAmtRecevied }} </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">
+                      Service History
+                    </button>
+              </div> -->
+            </div>
+          </div>
+
+
+      <br />
+
+      
+        </div>
+      <br>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+</div>
+

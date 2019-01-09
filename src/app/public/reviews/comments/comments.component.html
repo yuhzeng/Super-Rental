@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <div class="card-body">
+      <div class="container-fluid review-data" *ngFor="let review of reviews">
+        <div class="row card-shadow bg-white">
+          <div class="review-body clear-fix">
+            <app-mat-star-rating class=" review-rating" [rating]="review['rating']" [starCount]="5" [color]="warn "
+              (ratingUpdated)="onRatingChanged($event)" disable></app-mat-star-rating>
+            <br>
+            <br>
+            <div class="container-fluid ">
+              <p>{{review['post']}}</p>
+            </div>
+            <div class="container-fluid">
+              <p class="font-italic font-small text-muted">{{dateFix(review['timestamp']) | date:shortDate}}</p>
+            </div>
+          </div>
+          <br>
+
+        </div>
+      </div>
+
+      <div *ngIf="isClient">
+        <div class="container-fluid form-input">
+          <h4 class="float-left">Write a Review</h4>
+          <app-mat-star-rating class="float-right" [rating]="currentRating" [starCount]="5" [color]="warn "
+            (ratingUpdated)="onRatingChanged($event)" disable></app-mat-star-rating>
+        </div>
+        <br>
+        <div class="container-fluid form-input card-shadow form-input-filter bg-white">
+          <div class="row ">
+            <form [formGroup]="reviewPost" class="col-lg-12 review-post">
+              <mat-form-field class="col-lg-12">
+                <textarea formControlName='post' matInput rows="5" placeholder=""></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+        </div>
+        <br>
+        <div class="float-right">
+          <button type="button" (click)="onSubmit()" class="btn btn-primary">SUBMIT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

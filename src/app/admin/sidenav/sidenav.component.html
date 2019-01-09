@@ -1,0 +1,73 @@
+<nav id="sidebar">
+  <div class="sidebar-header text-center">
+      <h2 class="text-capitalize">Super Rentals</h2>
+      <br>
+      <h5>ADMINISTRATION</h5>
+  </div>
+  <div class="text-center">
+    <span class=" chip text-bold"><i class="chip-icon">{{ (this.authX._currentUser.displayName == undefined) ? this.authX._currentUser.email.charAt(0) : this.authX._currentUser.displayName.charAt(0) }}</i>{{ (this.authX._currentUser.displayName == undefined) ? this.authX._currentUser.email : this.authX._currentUser.displayName}}</span>   
+  </div>
+  <br>
+  <br>
+  <div class="text-center">
+    <button class="btn btn-primary my-1" (click)="this.authX.logout()">Exit </button>
+  </div>
+  <ul class="list-unstyled components">
+        <li>
+            <a routerLink='/admin'>DASHBOARD</a>
+        </li>
+        <li>
+            <a routerLink='community'>MY COMMUNITY</a>
+        </li>
+        <li>
+            <a routerLink='tours'>APPOINTMENTS</a>
+        </li>
+        <li>
+            <a routerLink='lease'>LEASE REQUESTS</a>
+        </li>
+        <!-- <li class="active">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BILLS</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                  <a routerLink='statement'>Statement</a>
+              </li>
+              <li>
+                  <a routerLink='pay'>Payment</a>
+              </li>
+          </ul>
+      </li> -->
+      <li>
+          <a href="#leaseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">LEASE</a>
+          <ul class="collapse list-unstyled" id="leaseSubmenu">
+              <li>
+                  <a [routerLink]="['clients']">Manage</a>
+              </li>
+              <li>
+                  <a [routerLink]="['amenities']">Amenities</a>
+              </li>
+              <li>
+                  <a [routerLink]="['apartment']">Apartments</a>
+              </li>
+              <li>
+                  <a [routerLink]="['enquiry']">Enquiries</a>
+              </li>
+          </ul>
+      </li>
+      <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">SERVICE REQUEST</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a routerLink='manage'>Manage </a>
+                </li>
+                <!-- <li>
+                    <a routerLink='history'>History</a>
+                </li> -->
+            </ul>
+        </li>
+        <li>
+            <a routerLink='profile'>MY PROFILE</a>
+        </li>
+      <!-- <li>
+          <a href="#">CONTACT</a>
+      </li> -->
+  </ul>

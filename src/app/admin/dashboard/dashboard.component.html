@@ -1,0 +1,15 @@
+<app-sidenav *ngIf="showNav"></app-sidenav>
+
+<!-- Page Content  -->
+<div id="content" [ngClass]="{'active': !showNav }">
+    <div class="navbar-toggler-icon text-light bg-dark mini-nav" (click)="display()"></div>
+      <router-outlet ></router-outlet>
+      <div class="float-right" style="float:right; width: 20%">
+        <app-chat-window></app-chat-window>
+    </div>
+</div>
+<!-- Futere Scope -->
+<div id="overlay" >
+</div>
+
+

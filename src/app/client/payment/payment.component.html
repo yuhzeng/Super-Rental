@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="https://hdqwalls.com/download/earth-rocket-minimalism-1920x1080.jpg" alt="">
+    <div class="card-body">
+      <h4 class="card-title">PAYMENT</h4>
+      <hr class="my-2 bg-dark">
+      <br>
+      <!-- INFO CARDS -->
+      <div class="row">
+        <div class="info-card col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">My Statement</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Current Balance</h6>
+              <p class="currency">{{ (bill) ? (bill.amount | currency) : ('0.00' | currency)}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-card col-lg-4 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Due Date</h5>
+              <h6 class="card-subtitle mb-2 text-muted">To pay</h6>
+              <p class="currency"> {{ getTime(dueDate) | date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-fluid bg-white form-input card-shadow">
+        <form>
+          <div class="form-group">
+            <label for="amount">Secret Key</label>
+            <input type="text" class="form-control" name="stellarKey"
+              placeholder="stellar key" type="password"
+              #secretKey>
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" class="form-control" name="amount" id="amount" aria-describedby="amount-help"
+              placeholder="{{ (bill) ? (bill.amount | currency) : '00.00' }}" 
+              #amountInput>
+            <!-- <input *ngIf="!bill" type="text" class="form-control" name="amount" id="amount" aria-describedby="amount-help"
+              placeholder="You have no balance due at the moment" 
+              #amountInput> -->
+            <small id="amount-help" class="form-text text-muted">*Balance amount</small>
+          </div>
+          <br>
+          <button type="button" name="" id="" class="btn btn-primary btn-lg" value="bill?.amount"
+            (click)="makePayment(secretKey.value); secretKey.value = ''; amountInput.value = '';"
+          >
+            PAY
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

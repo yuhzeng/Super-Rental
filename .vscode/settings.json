@@ -1,0 +1,9 @@
+{
+    "docker.defaultRegistryPath": "rent365.azurecr.io",
+    "tslint.exclude": [
+        "**/dist/**",
+        "**/node_modules/**",
+    ],
+    "typescript.validate.enable": true,
+    "javascript.validate.enable": false
+}

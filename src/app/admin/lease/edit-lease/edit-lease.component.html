@@ -1,0 +1,65 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/lake-river-reflection-clouds-km.jpg" alt="">
+    <div class="card-body">
+      <h4 class="card-title">VIEW LEASE REQUEST</h4>
+      <hr class="my-2 bg-dark-1">
+      <br>
+      <div class="row">
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Lease Value</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Amount($)</h6>
+              <p class="currency">{{totalAmount | currency}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Status</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Current</h6>
+              <p class="currency">{{status}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+      <div class=" card container-fluid form-input">
+        <mat-tab-group>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">home</mat-icon>
+            </ng-template>
+            <app-lease-apartment [apartmentForm]= "apartmentForm"></app-lease-apartment>
+          </mat-tab>
+        
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">offline_bolt</mat-icon>
+            </ng-template>
+            <app-lease-amenities [amenitiesForm]= "amenitiesForm" [amenitiesArray]="amenitiesArray" [amenities]="amenities"></app-lease-amenities>
+          </mat-tab>
+        
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <mat-icon class="example-tab-icon">supervised_user_circle</mat-icon>
+            </ng-template>
+            <app-lease-info [leaseDetailsForm]= "leaseDetailsForm"></app-lease-info>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <br>
+      <div class="float-left" *ngIf="buttonDisplay"> 
+          <button type="button" (click)="onLeaseSubmit('ACCEPT')" class="btn btn-success btn-lg">APPROVE</button>&nbsp;
+          <button type="button" (click)="onLeaseSubmit('REJECT')" class="btn btn-danger btn-lg">REJECT</button>&nbsp;
+      </div>
+      <div class="float-right">
+        <button type="button" (click)="onLeaseSubmit(status)" class="btn btn-primary btn-lg">UPDATE</button>&nbsp;
+        <button type="button" (click)="goBack()"  class="btn btn-warning btn-lg">CANCEL</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<form [formGroup]="appointmentForm">
+
+  <h4 class="card-title aptmnt-title">AVAILABLE TIME SLOTS</h4>
+  <hr class="my-2 bg-dark-1">
+  <p>Date: {{appointmentDate |date:'shortDate'}}</p>
+  <div class="card-group" *ngIf="timeSlots.length !== 0">
+        <div class="info-card" *ngFor="let timeSlot of timeSlots">
+            <label class="form-check-label">
+              <input type="radio" class="display-hide" formControlName="start_time" name="start_time" value="{{timeSlot}}">
+              <div class="card" style="width:6rem">
+                <div class="card-body">
+                  <ul class="text-dark info-list">
+                    <li>{{timeSlot}} : 00</li>
+                  </ul>
+                </div>
+              </div>
+            </label>
+        </div>
+  </div>
+  <div class="card-group" *ngIf="timeSlots.length == 0">
+      <div class="info-card">
+          <label class="form-check-label">
+            <div class="card" style="width:6rem">
+              <div class="card-body">
+                <ul class="text-dark info-list">
+                  <li>No time slots available</li>
+                </ul>
+              </div>
+            </div>
+          </label>
+      </div>
+  </div>
+  <br>
+  <h4 class="card-title aptmnt-title">CONTACT DETAILS</h4>
+  <hr class="my-2 bg-dark-1">
+  <br>
+  <div class="row">
+    <mat-form-field class="col-md-4">
+      <input matInput formControlName="name" type="text" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="offset-md-1 col-md-4">
+      <input matInput formControlName="email" type="email" placeholder="Email">
+    </mat-form-field>
+  </div>
+  <br>
+  <button type="button" (click)="onSubmit()" name="submit-app" id="submit-app" class="btn btn-primary">SUBMIT</button>
+  <br>
+  <br>
+</form>

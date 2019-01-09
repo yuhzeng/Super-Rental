@@ -1,0 +1,28 @@
+.display-hide{
+    opacity: 0;
+}
+
+.currency {
+    font-size: 2rem;
+    color: #000;
+}
+
+.card {
+    width: 100%;
+}
+
+input:checked + .card {
+    border: 0.20rem solid #ff4081;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+input + .card {
+    border: 0.20rem solid #ccc;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+.info-card{
+    margin: 1rem;
+}
+
+

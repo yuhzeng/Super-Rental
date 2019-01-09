@@ -1,0 +1,68 @@
+.card-img-top{
+    display: block;
+    object-fit: cover;
+    height:23rem;
+}
+
+.currency {
+    font-size: 2rem;
+    color: #000;
+}
+.info {
+    font-size: 1rem;
+}
+
+.info .currency {
+    font-size: 1rem;
+}
+.info-card .card-title{
+    color: #000;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 400;
+
+}
+
+.table tbody td, .table thead th {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.table thead th {
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    #content {
+        width: calc(100% - 250px);
+    }
+
+    .container-fluid {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 5px;
+        padding-left: 5px;
+        width: 100%;
+    }
+}
+
+.full-table{
+    width: 100%;
+}
+
+table.mat-table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+.increse-width{
+    word-wrap: break-word;
+}
+
+
+.form-input{
+    font-size: 1.15rem;
+}

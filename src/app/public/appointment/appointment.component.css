@@ -1,0 +1,119 @@
+.card-img-top{
+    display: block;
+    object-fit: cover;
+    height:23rem;
+}
+
+.currency {
+    font-size: 2rem;
+    color: #000;
+}
+.info {
+    font-size: 1rem;
+}
+
+.info .currency {
+    font-size: 1rem;
+}
+.info-card .card-title{
+    color: #000;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 400;
+
+}
+
+@media (max-width: 768px) {
+    #content {
+        width: calc(100% - 250px);
+    }
+
+    .container-fluid {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 5px;
+        padding-left: 5px;
+        width: 100%;
+    }
+}
+
+.form-input {
+    padding: 2rem;
+}
+
+.custom-mat-fab {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 88px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 2px;
+    overflow: visible;
+    transform: translate3d(0,0,0);
+    transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    min-width: 0;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14), 0 3px 10px 0 rgba(0, 0, 0, 0.12), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.custom-mat-fab {
+    border: 0.35rem solid #3f51b5;
+    margin: 1rem;
+    background: white;
+}
+
+.date-day {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.date-main {
+    font-size: 2rem;
+    position: relative;
+    top: -8px;
+}
+
+.date-month {
+    font-size: 1rem;
+    position: relative;
+    top: -24px;
+    color: gray;
+}
+
+.aptmnt-box {
+    background: white;
+}
+
+.custom-mat-fab.active {
+    border-color: #ff4081;
+}
+
+.backgroundimage{
+    height:100%;
+    background-image:url('https://hdqwalls.com/wallpapers/milky-way-mount-fuji-7z.jpg');
+    background-position: 50% 50%;
+    margin-bottom: 2rem;
+}
+
+

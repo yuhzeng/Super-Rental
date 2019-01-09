@@ -1,0 +1,35 @@
+.container {
+    background-color: white;
+    padding-left: 100px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+label {
+    font-size: 15px;
+    color: black;
+}
+
+.asterisk {
+    color:red;
+  }
+
+.card-img-top{
+    display: block;
+    object-fit: cover;
+    height:23rem;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 400;
+
+}
+
+.form-input {
+    padding: 2rem;
+}
+

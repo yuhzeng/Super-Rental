@@ -1,0 +1,36 @@
+<div>
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne" [style.backgroundColor]="'#232323'">
+                <h5 class="mb-0">
+                    <button *ngIf="!anonUser" class="btn btn-link alert alert-danger" role="alert" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="false" aria-controls="collapseOne" (click)="toggleAccordion()">
+                        {{ this.accordionOpened ? 'Close chat box' : 'Chat with interested tenants'}}
+                    </button>
+                    <button *ngIf="anonUser" class="btn btn-link alert alert-danger display-4" role="alert" type="button" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="false" aria-controls="collapseOne" (click)="toggleAccordion()">
+                        
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;&nbsp;{{ this.accordionOpened ? 'Close chat box' : 'Chat'}}
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div *ngIf="!(anonUser)">
+                        <button type="button" class="btn btn-secondary btn-block mb-2">Select Chat Thread</button>
+                        <ul class="list-group" *ngFor="let thread of _chatThreads | async">
+                            <button type="button" class="list-group-item list-group-item-action" (click)="setActiveThread(thread.chatThreadID)">
+                                {{ thread.chatThreadID }}
+                            </button>
+                        </ul>
+                    </div>
+                    <app-chat-thread (eventEmitter)="switchTyping($event)" 
+                                [activeThread]="_activeThreadSubject"
+                                [messages]="_messages"
+                                [anonUser]="anonUser"> 
+                    </app-chat-thread>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

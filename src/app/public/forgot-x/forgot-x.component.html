@@ -1,0 +1,81 @@
+<div class="backgroundimage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="card">
+        <div class="card-header text-center">
+          <br>
+          <h2><i class="fa fa-life-bouy" aria-hidden="true"></i> Forgot Password</h2>
+        </div>
+        <div toastContainer></div>
+        <div class="card-body">
+          <div class="card-body">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" ngModel name="email" class="form-control" id="email" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-secondary btn-lg btn-block"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;
+                SEND RESET EMAIL</button>
+            </form>
+            <br>
+            <hr>
+            <p class="text-center">Or login with</p>
+            <div class="text-center">
+              <i (click)="this.authX.loginFacebook()" class="fa fa-cursor fa-facebook-official fa-3x"></i> &nbsp;
+              &nbsp;
+              <i (click)="this.authX.loginGoogle()" class="fa fa-cursor fa-google fa-3x"></i>
+            </div>
+
+          </div>
+
+          <div class="card-footer">
+            <p class=text-center>Have an account? <a [routerLink]="['../login']">Login</a>! Not a member?<a
+                [routerLink]="['../register']">
+                Sign up</a>!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-3 col-md-12 col-sm-12">
+        <div class="login-wrapper">
+            <div class="card-header text-center">
+              <br>
+              <h4 class="display-3"><i class="fa fa-life-bouy" aria-hidden="true"></i> Forgot Password</h4>
+            </div>
+            <div toastContainer></div>
+            <div class="card-body">
+              <div class="card-body">
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" ngModel name="email" class="form-control" id="email" required>
+                  </div>
+                  <br>
+                  <br>
+                  <button type="submit" class="btn btn-secondary btn-lg btn-block"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp; SEND RESET EMAIL</button>
+                </form>
+                <hr>
+                <p class="text-center">Or login with</p>
+                <div class="text-center">
+                  <i (click)="this.authX.loginFacebook()" class="fa fa-cursor fa-facebook-official fa-3x"></i> &nbsp; &nbsp;
+                  <i (click)="this.authX.loginGoogle()" class="fa fa-cursor fa-google fa-3x"></i>
+                </div>
+                  
+              </div>
+        
+              <div class="card-footer">
+                <p class=text-center>Have an account? <a [routerLink]="['../login']">Login</a>! Not a member?<a [routerLink]="['../register']"> Sign up</a>!</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-9 col-lg d-none d-lg-none d-xl-block bg-image-super">
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="card text-dark-2 bg-light-1">
+      <img class="card-img-top" src="https://hdqwalls.com/wallpapers/up-movie-digital-art-yn.jpg" alt="">
+      <div class="card-body">
+        <h4 class="card-title">AMENITY DETAILS</h4>
+        <hr class="my-2 bg-dark-1">
+  
+        <div class="container-fluid form-input">
+          <div class="row bg-white">
+            <div class="table-responsive form-input full-table card-shadow">
+              <form [formGroup]="amenityData">
+                
+                <div class="row">
+                  <mat-form-field class="col-lg-4">
+                    <input matInput formControlName="title" placeholder="Xavier School for Gifted">
+                    <mat-label>Title</mat-label>
+                  </mat-form-field>
+                </div>
+
+                <div class="row">
+                  <mat-form-field class="col-lg-4">
+                    <input matInput formControlName="sub_title" placeholder="Home for meta humans">
+                    <mat-label>Sub-title</mat-label>
+                  </mat-form-field>
+                </div>
+
+                <div class="row">
+                  <mat-form-field class="col-lg-2">
+                    <input matInput formControlName="price" placeholder="2000" type="number">
+                    <span matPrefix>$&nbsp;</span>
+                    <span matSuffix>.00</span>
+                    <mat-label>Amount</mat-label>
+                  </mat-form-field>
+                </div>
+
+                <div class="row">
+                  <mat-form-field class="col-lg-4">
+                    <textarea matInput formControlName="description" placeholder="Property Information" rows="5"></textarea>
+                    <mat-label>Description</mat-label>
+                  </mat-form-field>
+                </div>
+                
+                <div class="row">
+                  <mat-form-field class="col-lg-4">
+                    <input matInput formControlName="image" placeholder="http://coolimgae/hello.jpg" type="url">
+                    <mat-label>Thumbnail</mat-label>
+                  </mat-form-field>
+                </div>
+                <br>
+                <button type="button" (click)="onSubmitRequest()" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg">SUBMIT</button>
+                  &nbsp;<button type="button" (click)="goBack()" name="requestSubmit" class="btn btn-danger btn-lg">CANCEL</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="card ext-dark-2 bg-light-1">
+      <img class="card-img-top" src="https://hdqwalls.com/wallpapers/bridge-in-forest-minimalist-4k-w7.jpg"
+        alt="">
+      <div class="card-body">
+        <h4 class="card-title">NEW SERVICE REQUEST</h4>
+        <hr class="my-2 bg-dark-1">
+        <br>
+        <!-- INFO CARDS -->
+        <div class="row">
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Request</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Open</h6>
+                <p class="currency">{{count}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="container-fluid bg-white form-input card-shadow">
+          <div class="row">
+            <div class="col-lg-7">
+                <form [formGroup]="serviceRequest" autocomplete="off">
+                    <div class="form-group">
+                      <label for="subject">Subject</label>
+                      <input type="text" formControlName="subject" class="form-control" name="subject" id="subject" aria-describedby="request-subject" placeholder="Accidentally flushed my cape" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea  
+                        class="form-control" formControlName="ticketDescription" name="ticketDescription" id="description" aria-describedby="description-help" placeholder="More info on how you flushed the cape" rows="5" required></textarea>
+                        <small id="description-help" class="form-text text-muted">*Please enter the description</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="">* Permission to enter the crib while you are out saving the world ?</label>
+                      <br>
+                      <br>
+                      <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="permission" type="radio"   name="permission" id="permission1" value="yes"> Yes
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="permission" type="radio" name="permission" id="permission2" value="no"> No
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">* Do you have any super pets ?</label>
+                      <br>
+                      <br>
+                      <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="pets" type="radio"  name="pets" id="pets1" value="yes"> Yes
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="pets" type="radio" name="pets" id="pets2" value="no"> No
+                          </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">* Do you have a private security system ?</label>
+                      <br>
+                      <br>
+                      <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="security" type="radio"   name="security" id="security1" value="yes"> Yes
+                          </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" formControlName="security" type="radio" name="security" id="security2" value="no"> No
+                          </label>
+                        </div>
+                    </div>
+                    <button type="button" (click)="onSubmitRequest()" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg">SUBMIT</button>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

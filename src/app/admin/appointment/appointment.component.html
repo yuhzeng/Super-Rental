@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="card text-dark-2 bg-light-1">
+      <img class="card-img-top" src="https://hdqwalls.com/wallpapers/mountains-landscape-nature-digital-art-1b.jpg" alt="">
+      <div class="card-body">
+        <h4 class="card-title">UPCOMING APPOINTMENTS</h4>
+        <hr class="my-2 bg-dark-1">
+        <br>
+        <!-- INFO CARDS -->
+        <div class="row">
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Tours Scheduled</h6>
+                <p class="currency">{{allCount}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Today</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Tours Scheduled </h6>
+                <p class="currency">{{todayCount}}</p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Completed</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Till Date </h6>
+                <p class="currency">{{completedCount}}</p>
+              </div>
+            </div>
+          </div> -->
+  
+        </div>
+        <br>
+  
+        <div class="container-fluid form-input form-input-filter">
+          <div class="row card-shadow ">
+              <mat-form-field class="col-12 bg-white table-filter text-dark">
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search (Appointments)">
+                <mat-label><i class="fa fa-search" aria-hidden="true"></i>&nbsp; <b> Search (Appointments)</b></mat-label>
+              </mat-form-field>
+          </div>
+        </div>
+        <div class="container-fluid form-input">
+          <div class="row">
+            <div class="table-responsive full-table card-shadow">
+              <table mat-table [dataSource]="dataTable" matSort class=" mat-elevation-z8 table-filter table-hover">
+  
+                <ng-container matColumnDef="appointmentID">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ID. </th>
+                  <td mat-cell *matCellDef="let element">{{element.appointmentID
+                      | slice:-8}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                  <td mat-cell *matCellDef="let element"> {{element.email }} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="start_time">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Scheduled Time </th>
+                  <td mat-cell *matCellDef="let element"> {{ dateConverter(element.start_time) | date:'medium' }} </td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator class="mat-elevation-z8" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

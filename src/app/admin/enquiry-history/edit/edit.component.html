@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/lake-river-reflection-clouds-km.jpg" alt="">
+    <div class="card-body">
+      <h4 class="card-title">VIEW ENQUIRY</h4>
+      <hr class="my-2 bg-dark-1">
+      <br>
+      <div class=" card container-fluid form-input">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="text-bold">First Name:</label> &nbsp;
+              <label>{{enquiryDetails.firstName}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="text-bold">Last Name:</label> &nbsp;
+              <label>{{enquiryDetails.lastName}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="text-bold">e-mail:</label> &nbsp;
+              <label>{{enquiryDetails.email}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="text-bold">Contact:</label> &nbsp;
+              <label>{{enquiryDetails.contact}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="text-bold">Recieved Date:</label> &nbsp;
+              <label> {{enquiryDetails.recievedDate | date}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="form-group">
+              <label class="text-bold">Message:</label> &nbsp;<br>
+              <label>{{enquiryDetails.message }}</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <form [formGroup]="statusUpdate">
+            <div class="form-group">
+                <mat-form-field class="example-full-width">
+                  <input formControlName="resolvedDate" matInput [matDatepicker]="picker" placeholder="Resolved Date">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-label><i class="fa fa-calendar-o" aria-hidden="true"></i> <b> Resolved date</b></mat-label>
+                </mat-form-field>
+              </div>
+              <div class="form-group">
+                <mat-form-field>
+                  <mat-select formControlName="status" placeholder="Status">
+                    <mat-option *ngFor="let key of keys" [value]="key">
+                      {{status[key]}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-label><b>Status</b></mat-label>
+                </mat-form-field>
+              </div>
+              <button type="button" (click)="onSubmitRequest()" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg">UPDATE</button>
+                &nbsp;<button type="button" (click)="goBack()" name="requestSubmit" class="btn btn-danger btn-lg">CANCEL</button>
+        </form>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

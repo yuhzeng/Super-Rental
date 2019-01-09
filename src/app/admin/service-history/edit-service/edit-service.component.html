@@ -1,0 +1,108 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/mountains-landscape-nature-digital-art-1b.jpg" alt="">
+    <div class="card-body">
+      <h4 class="card-title">UPDATE SERVICE RECORD</h4>
+      <hr class="my-2 bg-dark-1">
+      <br>
+      <div class="container-fluid form-input-filter">
+        <div class="container-fluid bg-white form-input card-shadow">
+          <div class="row">
+            <div class="col-lg-7">
+              <form [formGroup]="serviceTicket" autocomplete="off">
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" formControlName="subject" class="form-control" name="subject" id="subject"
+                    aria-describedby="request-subject" placeholder="Accidentally flushed my cape" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea class="form-control" formControlName="ticketDescription" name="ticketDescription" id="description"
+                    aria-describedby="description-help" placeholder="More info on how you flushed the cape" rows="5"
+                    required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="">* Permission to enter the crib while you are out saving the world ?</label>
+                  <br>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="permission" type="radio" name="permission" id="permission1"
+                        value="yes"> Yes
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="permission" type="radio" name="permission" id="permission2"
+                        value="no"> No
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="">* Do you have any super pets ?</label>
+                  <br>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="pets" type="radio" name="pets" id="pets1" value="yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="pets" type="radio" name="pets" id="pets2" value="no">
+                      No
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="">* Do you have a private security system ?</label>
+                  <br>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="security" type="radio" name="security" id="security1"
+                        value="yes"> Yes
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" formControlName="security" type="radio" name="security" id="security2"
+                        value="no"> No
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <mat-form-field class="example-full-width">
+                    <input formControlName="dateResolved" matInput [matDatepicker]="picker" placeholder="Resolved Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-label><i class="fa fa-calendar-o" aria-hidden="true"></i> <b> Resolved date</b></mat-label>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <mat-select formControlName="ticketStatus" placeholder="Status">
+                      <mat-option *ngFor="let key of keys" [value]="key">
+                        {{status[key]}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-label><b>Status</b></mat-label>
+                  </mat-form-field>
+                </div>
+                <button type="button" (click)="onSubmitRequest()" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg">SUBMIT</button>
+                &nbsp;<button type="button" (click)="goBack()" name="requestSubmit" class="btn btn-danger btn-lg">CANCEL</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.news {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    width: 15rem;
+}
+
+.new-post {
+    margin-bottom: 1rem;
+} 
+
+.nav-link {
+    display: block;
+    width: 20rem;
+    padding: 0.5rem 0rem;
+}
+

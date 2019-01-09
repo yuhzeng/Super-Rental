@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="card text-white bg-dark">
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/forest-dark-evening-sunset-last-light-minimalistic-5c.jpg"
+      alt="">
+    <div class="card-body">
+      <h4 class="card-title">BILLS</h4>
+      <hr class="my-2 bg-light">
+      <br>
+      <!-- INFO CARDS -->
+      <!-- TODO: Note, this is not needed here -->
+      <div class="row">
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Total of Bills </h5>
+              <h6 class="card-subtitle mb-2 text-muted">Current Balance</h6>
+              <p class="currency">{{ billTotal | currency  }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container-fluid bg-white form-input">
+        <div class="row">
+          <div class="table-responsive">
+            <br>
+              <table class="table table-hover ">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Bill ID</th>
+                      <th scope="col">User ID</th>
+                      <th scope="col">Apartment ID</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Due Date </th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let bill of _bills | async">
+                    <tr>
+                      <td> {{ bill.billID }} </td>
+                      <td> {{ bill.userID }} </td>
+                      <td> {{ bill.apartmentID }} </td>
+                      <td> {{ bill.amount | currency }} </td>
+                      <td> {{ bill.dateDue | date }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

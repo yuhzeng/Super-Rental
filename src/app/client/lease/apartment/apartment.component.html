@@ -1,0 +1,33 @@
+
+<br>
+<!-- INFO CARDS -->
+<form [formGroup]="apartmentForm">
+    <div class="alert alert-danger" role="alert" *ngIf="alert">
+        Please select an Apartment
+    </div>
+  <div class="card-group bg-light-1">
+    <div class="info-card" *ngFor="let apartment of apartments" >
+      <label class="form-check-label">
+        <input type="radio" class="display-hide" formControlName="aptID" name="aptID" value="{{apartment.aptID}}">
+        <div class="card" style="width:20rem">
+          <!-- <img class="card-img-top" src="https://s26551.pcdn.co/wp-content/uploads/2012/03/kettler-dev-cc.jpg" style="height: 15rem;"
+            alt="Card image cap"> -->
+          <hr class="my-2 bg-dark-1">
+          <div class="card-body">
+            <div class="card-title text-dark">{{apartment.title}}</div>
+            <h6 class="card-subtitle mb-2 text-muted">{{apartment.type}}</h6>
+            <p class=" mb-2 text-muted">{{apartment.description | slice:0:50}}</p>
+            <br>
+            <ul class="text-dark info-list">
+              <li><i class="fa fa-bed" aria-hidden="true"></i> Beds : {{apartment.beds}}</li>
+              <li><i class="fa fa-bath" aria-hidden="true"></i> Bath : {{apartment.baths}}</li>
+            </ul>
+            <div class="currency">{{apartment.price | currency}}</div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+</div>
+<br>
+</form>

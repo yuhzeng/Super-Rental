@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body" id="chatThread">
+        <!-- <h2 class="text-primary"> Chat Box</h2> -->
+        <!-- TODO: Check for async pipe -->
+        <div class="clearfix" style="max-height: 1em" 
+            *ngFor="let message of _messages" data-offset="0" data-target="#chatThread">
+            <app-chat-message class="text-info" [message]="message" [anonUser]="anonUser"
+                style="clear: both;"
+                [style.float]="message.sender=='admin' ? 'left' : 'right'">
+            </app-chat-message>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="message" name="messageBox" id="messageBox" 
+                    #messageBox (keyup)="messageText$.next($event)">
+            <div class="input-group-append">
+                <button class="btn btn-secondary btn-lg" type="button" 
+                        (click)="sendMessage(messageBox.value); messageBox.value = ''"
+                        [disabled]="_activeThread === undefined || _activeThread === null">
+                    Send
+                </button>
+            </div>
+        </div>
+        <div style="clear:both">
+                <p class="text-secondary" [hidden]="(!anonUser || !_activeThread?.adminTyping)"><em> admin is typing...</em> </p>
+                <p class="text-secondary" [hidden]="anonUser || (!_activeThread?.userTyping)"><em> user is typing...</em> </p>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="{{apartmentInfo['image']}}" alt="">
+    <div class="card-body">
+      <h4 class="card-title">{{apartmentInfo['title']}}</h4>
+      <hr class="my-2 bg-dark-1">
+      <div class="container-fluid form-input">
+        <div class="row">
+          <p>{{apartmentInfo['description']}}
+          </p>
+        </div>
+        <div class="row">
+          <mat-label><i class="fa fa-bed" aria-hidden="true"></i> Maximum # of Beds: {{apartmentInfo['beds']}}</mat-label>&nbsp;&nbsp;&nbsp;
+          <mat-label><i class="fa fa-bath" aria-hidden="true"></i> Maximum # of Baths: {{apartmentInfo['baths']}}</mat-label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

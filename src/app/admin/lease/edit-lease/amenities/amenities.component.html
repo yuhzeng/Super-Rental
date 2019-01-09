@@ -1,0 +1,27 @@
+<br>
+<!-- INFO CARDS -->
+<form [formGroup]= amenitiesForm>
+  <div class="card-group bg-light-1" *ngIf="amenitiesArray != undefined">
+    <div class="info-card" *ngFor="let control of amenitiesArray ;let i= index">
+      <label class="form-check-label">
+        <input type="checkbox" [formControl]="control" class="display-hide" >
+        <div class="card" style="width:20rem">
+          <hr class="my-2 bg-dark">
+          <div class="card-body">
+            <div class="card-title text-dark">{{amenities[i].title}}</div>
+            <h6 class="card-subtitle mb-2 text-muted">{{amenities[i].sub_title}}</h6>
+            <p class=" mb-2 text-muted">{{amenities[i].description}}</p>
+            <div class="currency">{{amenities[i].price | currency}}</div>
+          </div>
+        </div>
+      </label>
+    </div>
+
+</div>
+<br>
+<!-- <div class="col">
+  <button class="btn btn-primary float-left" role="button" (click)="navigateBack()" ><i class="material-icons" style="font-size:1.5rem;">navigate_before</i> Apartment </button>
+  <button type="submit" class="btn btn-primary float-right" role="button" >Amenities <i class="material-icons" style="font-size:1.5rem;">navigate_next</i></button>
+</div> -->
+
+</form>

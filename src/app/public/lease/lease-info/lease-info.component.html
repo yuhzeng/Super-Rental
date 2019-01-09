@@ -1,0 +1,131 @@
+<h4 class="card-title"><span class="badge badge-secondary">3</span> LEASE INFO</h4>
+<hr class="my-2 bg-dark">
+<br>
+<!-- INFO CARDS -->
+<form [formGroup]="customerForm">
+  <div class="card text-dark bg-light">
+    <!-- <img class="card-img-top" src="" alt="Hello"> -->
+    <div class="card-body">
+      <div formGroupName="leaseInfo">
+        <h6 class="card-title">Leasee Period</h6>
+        <div class="form-row">
+            <div class="col-lg-4">
+              <div class="form-group">
+                <mat-form-field class="example-full-width">
+                  <input [min]="minDate" [max]="maxDate" formControlName="startDate" matInput [matDatepicker]="picker" placeholder="Start Date">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-label><i class="fa fa-calendar-o" aria-hidden="true"></i> <b> Start Date</b></mat-label>
+                </mat-form-field>
+              </div>
+              </div>
+        </div>
+
+        <h5 class="font-weight-bold" >Tenure</h5>
+        <div class="form-row">
+            <div class="col-lg-1">
+                <div class="form-group">
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="period" value="6" formControlName="period"> 6 Months
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <div class="col-lg-1">
+                <div class="form-group">
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="period" value="12" formControlName="period"> 12 Months
+                    </label>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      <br>
+      <h6 class="card-title">Main Leasee</h6>
+      <div class="form-row">
+        <div class="col-lg-2">
+          <div class="form-group">
+            <div class="floating-label">
+              <label for="main-firstname">First Name</label>
+              <input aria-describedby="main-firstname" class="form-control" id="main-firstname" placeholder="John (required)"
+                type="text" formControlName="firstName">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="form-group">
+            <div class="floating-label">
+              <label for="main-lastname">Last Name</label>
+              <input aria-describedby="main-lastname" class="form-control" id="main-lastname" placeholder="Carpenter (required)"
+                type="text" formControlName="lastName">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="form-group">
+            <div class="floating-label">
+              <label for="main-email"></label>
+              <input aria-describedby="main-email" class="form-control" id="main-email" placeholder="john.carpenter@superrentals.com (required)"
+                type="email" formControlName="emailDisable" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h6 class="card-title">Add Additional Leasee(s)</h6>
+      <div formArrayName="otherLeasee">
+        <div *ngFor="let otherLeasee of getOtherLease().controls; let i = index">
+          <div [formGroupName]="i">
+            <h5>Leasee {{i+1}}</h5>
+            <div class="form-row">
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="floating-label">
+                    <label for="sub-lease-first{{i}}">First Name</label>
+                    <input id="sub-lease-first{{i}}" class="form-control" placeholder="John" type="text"
+                      formControlName="firstName">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="floating-label">
+                    <label for="sub-lease-last{{i}}">Last Name</label>
+                    <input class="form-control" id="sub-lease-last{{i}}" placeholder="Carpenter" type="text"
+                      formControlName="lastName">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="form-group">
+                  <div class="floating-label">
+                    <label for="sub-lease-email{{i}}">Email</label>
+                    <input class="form-control" id="sub-lease-email{{i}}" placeholder="john.carpenter@superrentals.com"
+                      type="email" formControlName="email">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" [disabled]= "(!customerForm.valid)" (click)="addLeasee()">Add
+          +</button>&nbsp;
+        <button type="button" class="btn btn-danger btn-sm" [disabled]="!customerForm.valid && (getOtherLease().length  < 1)" (click)="popLeasee()">Remove
+          -</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="col">
+    <!-- <button type="button" class="btn btn-primary float-left" role="button" (click)="navigateBack()"><i class="material-icons" style="font-size:1.5rem;">navigate_before</i>
+      Amenities </button>
+    <button type="button" (click)="saveLeaseInfo()" class="btn btn-primary float-right" role="button">Review <i class="material-icons" style="font-size:1.5rem;">navigate_next</i></button> -->
+  </div>
+
+</form>

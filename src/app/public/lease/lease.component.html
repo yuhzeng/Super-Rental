@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1 container-lease">
+
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/skyscraper-buildings-minimalist-4k-bu.jpg" alt="">
+
+    <div class="card-img-overlay">
+      <h2 class="card-title display-4 text-white">Join the Super Rental Family ! </h2>
+    </div>
+
+    <div class="card-body">
+      <br>
+      <ul class="nav nav-tabs justify-content-center bg-light card-shadow">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['apartment']"><i class="material-icons" style="font-size:2rem;">home</i>
+            Apartment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['amenities']" routerLinkActive=""><i class="material-icons" style="font-size:2rem;">offline_bolt</i>
+            Amenities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['userinfo']"><i class="material-icons" style="font-size:2rem;">supervised_user_circle</i>
+            Lease Info</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" [routerLink]="['submit']"><i class="material-icons" style="font-size:2rem;">verified_user</i>
+            Submit</a>
+        </li> -->
+      </ul>
+      <br>
+      <br>
+      <app-apartment [apartmentForm]= "apartmentForm"></app-apartment>
+      <app-amenities [amenitiesForm]= "amenitiesForm" [amenitiesArray]="amenitiesArray" [amenities]="amenities"></app-amenities>
+      <app-lease-info [leaseDetailsForm]= "leaseDetailsForm"></app-lease-info>
+      <button type="button" (click)="onLeaseSubmit()" name="lease" id="lease" class="btn btn-primary">SUBMIT LEASE</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="card text-dark-2 bg-light-1">
+      <img class="card-img-top" src="https://hdqwalls.com/wallpapers/mountains-landscape-nature-digital-art-1b.jpg" alt="">
+      <div class="card-body">
+        <h4 class="card-title">AMENITIES MANAGEMENT</h4>
+        <hr class="my-2 bg-dark-1">
+        <br>
+        <!-- INFO CARDS -->
+        <div class="row">
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Amenities</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Available</h6>
+                <p class="currency">{{allCount}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <div class="container-fluid form-input-filter">
+            <button type="button" routerLink="0" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg"><i class="fa fa-plus-circle"></i> NEW AMENITY</button>
+        </div>
+        <div class="container-fluid form-input form-input-filter">
+          <div class="row card-shadow ">
+            <mat-form-field class="col-12 bg-white table-filter text-dark">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search (Service History)">
+              <mat-label><i class="fa fa-search" aria-hidden="true"></i>&nbsp; <b> Search (All Amenities)</b></mat-label>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="container-fluid form-input">
+          <div class="row">
+            <div class="table-responsive full-table card-shadow">
+              <table mat-table [dataSource]="dataTable" matSort class=" mat-elevation-z8 table-filter table-hover">
+  
+                <ng-container matColumnDef="amntID">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ID. </th>
+                  <td mat-cell *matCellDef="let element"><a [routerLink]="[element.amntID]">{{element.amntID | slice:-8}}</a> </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="title">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+                  <td mat-cell *matCellDef="let element"> {{element.title }} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="sub_title">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Sub-title </th>
+                  <td mat-cell *matCellDef="let element"> {{element.sub_title }} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                  <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                  <td mat-cell *matCellDef="let element">{{ element.price | currency}}</td>
+                </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator class="mat-elevation-z8" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

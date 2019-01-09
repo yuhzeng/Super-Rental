@@ -1,0 +1,175 @@
+header {
+    position: relative;
+    background-color: black;
+    height: 75vh; width: 100%;
+    min-height: 25rem;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    height: auto; width: auto; 
+    top: 50%; left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header .overlay {
+    position: absolute;
+    height: 100%; width: 100%;
+    top: 0; left: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.card {
+    box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #ffffff;
+}
+
+.section-title {
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.chat-now-button {
+    bottom: 0; right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: fixed;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+}
+
+.carousel {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.15);
+}
+
+.carousel-item {
+    height: 50vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+#base-locations .btn {
+    color: black;
+    border: 1px solid black;
+}
+
+.chat {
+    float: right;
+    height: 10%;
+    z-index: 20;
+}
+
+footer {
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.display-hide{
+    opacity: 0;
+}
+
+.currency {
+    font-size: 2rem;
+    color: #000;
+}
+
+.card {
+    width: 100%;
+}
+
+input:checked + .card {
+    border: 0.20rem solid #ff4081;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+input + .card {
+    border: 0.20rem solid #ccc;
+    border-radius: 4px 4px 4px 4px !important;
+}
+
+.info-card{
+    margin: 1rem;
+}
+
+
+.info-list {
+    font-size: 1.1rem;
+    list-style: none;
+    padding-left: 0rem;
+    
+}
+.info-list li {
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+.card-body {
+    padding: 0.5rem;
+}
+
+.nav-brand {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.02em;
+    font-size: 3rem;
+}
+
+#amenities {
+    background-color: #DCDCDC;
+}
+
+#base-locations {
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#gallery {
+    background-color: #DCDCDC;
+}
+
+#cta-contact {
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#chat {
+    padding: 0rem;
+}

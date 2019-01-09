@@ -1,0 +1,43 @@
+.login-wrapper{
+    margin-top:25%;
+}
+
+.fa-cursor{
+    cursor: pointer;
+} 
+
+.bg-image-super {
+    background: url(https://cdn.hipwallpaper.com/i/58/92/grhwDk.jpg);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 93vh;
+    border-left: 0.25rem solid #ccc;
+}
+
+.navbar {
+    display: none !important;
+}
+
+.hide-login{
+    display: none;
+}
+
+.card{
+    position: fixed;
+    width:25rem;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+.backgroundimage{
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    overflow-y: hidden;
+    background-image:url('https://hdqwalls.com/wallpapers/milky-way-mount-fuji-7z.jpg');
+    background-position: 50% 50%;
+  }

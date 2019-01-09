@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/up-movie-digital-art-yn.jpg" alt="">
+    <div class="card-body">
+      <h4 class="card-title">ENQUIRY MANAGER</h4>
+      <hr class="my-2 bg-dark-1">
+      <br>
+      <!-- INFO CARDS -->
+      <div class="row">
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Total Enquiries</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Recieved</h6>
+              <p class="currency">{{allCount}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Pending</h5>
+              <h6 class="card-subtitle mb-2 text-muted">To Do</h6>
+              <p class="currency">{{pendingCount}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="info-card col-lg-3 col-md-6 col-sm-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Completed</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Happy !</h6>
+              <p class="currency">{{completedCount}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="container-fluid form-input form-input-filter">
+        <div class="row card-shadow ">
+            <mat-form-field class="col-12 bg-white table-filter text-dark">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search (All Enquiries)">
+              <mat-label><i class="fa fa-search" aria-hidden="true"></i>&nbsp; <b> Search (All Enquiries)</b></mat-label>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="container-fluid form-input">
+        <div class="row">
+          <div class="table-responsive full-table card-shadow">
+            <table mat-table [dataSource]="dataTable" matSort class=" mat-elevation-z8 table-filter table-hover">
+
+              <ng-container matColumnDef="enquiryID">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID. </th>
+                <td mat-cell *matCellDef="let element"><a [routerLink]="[element.enquiryID]">{{element.enquiryID | slice:-8 }}</a> </td>
+              </ng-container>
+
+              <ng-container matColumnDef="recievedDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Recieved </th>
+                <td mat-cell *matCellDef="let element">{{ element.recievedDate ? (element.recievedDate | date) : "--"}}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="message">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="increse-width"> Message </th>
+                <td mat-cell *matCellDef="let element"> {{element.message }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="contact">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Contact </th>
+                <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="resolvedDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Resolved </th>
+                <td mat-cell *matCellDef="let element">{{ element.resolvedDate ? (element.resolvedDate | date) : "--"}}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator class="mat-elevation-z8" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

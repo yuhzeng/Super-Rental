@@ -1,0 +1,174 @@
+/*
+ All the copyrights for the below code belongs to 
+ @https://bootstrapious.com/p/bootstrap-sidebar
+*/
+
+
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+#card-content-main{
+    position: relative;
+    top: 6rem;
+    z-index:10 ;
+}
+
+.fade-active{
+    top: 0rem;
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    z-index:95 ;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    padding: 10px 10px 10px 10px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f5f5f5;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #content {
+        width: calc(100% - 250px);
+    }
+
+    .container-fluid {
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 5px;
+        padding-left: 5px;
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------
+    CUSTOM
+----------------------------------------------------- */
+
+span.navbar-toggler-icon {
+    padding: 10px 15px 10px 15px;
+    background: black;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar{
+    /* position: fixed; */
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.mini-nav {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius:2px;
+    background: #000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000, #000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    cursor: pointer;
+}
+
+h4 {
+    font-weight: 800;
+}

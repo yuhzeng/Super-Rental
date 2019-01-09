@@ -1,0 +1,68 @@
+/* You can add global styles to this file, and also import other style files  */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+table.mat-table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: 1rem 1rem !important;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 20%;
+}
+
+.mat-sort-header-button {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+}
+
+.mat-paginator{
+    width: 100%;
+}
+
+.table-filter {
+    padding: 1rem 1rem;
+    font-size: 1.15rem;
+}
+
+.card-shadow {
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14), 0 3px 4px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-input-filter {
+    padding: 0rem;
+    font-size: 1.25rem;
+    color: black;
+}
+
+.form-input {
+    padding: 1.35rem !important;
+}
+
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.info-card .card-title {
+    font-weight: 400;
+}
+
+body {
+    background: #ccc;
+}
+

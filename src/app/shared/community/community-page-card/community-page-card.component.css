@@ -1,0 +1,36 @@
+.card-img-top {
+    width:inherit; 
+    object-fit: contain;
+    background-image: linear-gradient(to left, #879dbe, #3ea0c0, #00a2a2, #009d66, #5e9012);
+}
+
+.card-text-title {
+    text-transform: capitalize;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.community-heading {
+    padding: 1rem 1.5rem;
+}
+
+.card {
+    border-radius: 0.15rem;
+    width: 23rem;
+    height:42rem;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.card-body {
+    height:10rem;
+}
+
+.text-description{
+    min-height: 12rem;
+    max-height: 12rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    text-align: justify;
+}

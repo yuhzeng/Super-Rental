@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="card text-dark-2 bg-light-1">
+      
+    <img class="card-img-top" src="https://hdqwalls.com/wallpapers/outside-city-zi.jpg"
+      alt="">
+
+      <div class="card-img-overlay">
+          <h1 class=" text-white text-wrap">Welcome to Super Rentals Resident Portal !</h1>
+          <!-- <p class="card-text d-none d-lg-block ">Pay your rent online, enter a maintenance service request or browse our calendar for upcoming
+              activities.
+    
+              Super Rentals Management is dedicated to exceeding our resident’s expectations. In our communities across the
+              universe, we strive to provide the most desirable, well-maintained apartment homes by providing exceptional
+              customer service.
+    
+              Please contact your local community office should the need arise</p> -->
+      </div>
+      
+    <div class="card-body">
+      <h4 class="card-title">WELCOME</h4>
+      <hr class="my-2 bg-dark">
+      <br>
+      <!-- INFO CARDS -->
+      <div class="card-group">
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Current Bill</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Current Balance</h6>
+                <p class="currency">{{ (bill) ? (bill?.amount | currency) : ('0.00' | currency)}}</p>
+              </div>
+              <div class="card-footer float-right">
+                <button type="button" routerLink= "pay" name="quickpay" id="quickpay" class="btn btn-info btn-sm">QUICK PAY</button>
+              </div>
+
+            </div>
+          </div>
+      
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">My Lease</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Expiration Date</h6>
+                  <p class="currency"> {{ expiryDate | date }}</p>
+              </div>
+              <div class="card-footer float-right">
+                <button type="button" routerLink="lease" id="lease" class="btn btn-info btn-sm">LEASE INFO</button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Service Requests</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Open Requests</h6>
+                  <p class="currency">{{pendingRequest}}</p>
+              </div>
+              <div class="card-footer float-right">
+                <button type="button" routerLink="request" name="service-req" id="service-req" class="btn btn-info btn-sm">NEW SERVICE REQUEST</button>
+              </div>
+            </div>
+          </div>
+      
+          <div class="info-card col-lg-3 col-md-6 col-sm-12">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Events</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Upcoming</h6>
+                  <p class="card-title">{{ event?.eventTitle }}</p>
+                  <p class="card-subtitle font-italic">{{ event?.date | date }}</p>
+              </div>
+              <div class="card-footer">
+                <button type="button" routerLink="community" class="btn btn-info btn-sm" (click)="goToEvents()"> 
+                  Go to Events
+                </button>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      <br>
+    </div>
+  </div>
+</div>
+

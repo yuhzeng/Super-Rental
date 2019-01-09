@@ -1,0 +1,28 @@
+<div class="backgroundimage">
+<br>
+<br>
+<div class="container">
+  <div class="card text-dark-2 bg-light-1">
+    <!-- <img class="card-img-top" src="http://hdqwalls.com/wallpapers/wall-clock-f1.jpg" alt=""> -->
+    <div class="card-body">
+      <h4 class="card-title">BOOK A PROPERTY TOUR</h4>
+      <hr class="my-2 bg-dark-1">
+      <br>
+      <div class="container bg-white aptmnt-box card-shadow">
+        <br>
+        <h4 class="card-title aptmnt-title">PICK DATE</h4>
+          <hr class="my-2 bg-dark-1">
+          <br>
+          <div class="button-row">
+              <div class="custom-mat-fab" *ngFor="let date of workingDays" (click)="dateSelector(date)" [ngClass] ="{ 'active': (date === selectedDate) }"><span class="date-day">{{date | date:'EEE'}} </span> <br> <span class="date-main">{{date | date:'dd'}}</span> <br> <span class="date-month">{{date | date:'MMM'}}</span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <app-appointment-time [appointmentDate]="selectedDate" ></app-appointment-time>
+        <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/rent365" style="min-width:320px;height:580px;"></div> -->
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

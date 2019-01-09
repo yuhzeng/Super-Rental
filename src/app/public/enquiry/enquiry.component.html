@@ -1,0 +1,76 @@
+<div class="backgroundimage">
+    <br>
+    <br>
+  <div class="container">
+    <div class="card text-dark">
+      <div class="card-body bg-light-1 ">
+        <h4 class="card-title">CONTACT US</h4>
+        <hr class="my-2 bg-dark">
+        <br>
+        <div class="card bg-white text-black">
+          <div class="card-body">
+            <h4 class="address-title">Super Rentals</h4>
+            <p class="py-0 my-0">1337 Adeel Lane</p>
+            <p class="py-0 my-0">Gotham, NJ 53540</p>
+            <p class="pt-0 mt-0">+1 (420) 867-5309</p>
+            <p>* We're here to answer your questions Monday through Friday from 9 AM to 6 PM, EST</p>
+          </div>
+        </div>
+        <br>
+        <div class="card form-input">
+          <h5>Super Rentals family is dedicated to exceeding our resident’s expectations. In our communities across the
+            globe, we strive to provide the most desirable, well-maintained apartment homes by providing exceptional
+            customer service. If you have any questions or comments, please send us a message and we will get back to
+            you by the end of the next business day.</h5>
+          <hr class="my-2 bg-dark">
+          <h4 class="card-title text-black">Write to Us</h4>
+          <div class="row">
+            <div class="col-lg-12">
+              <form [formGroup]="enquiry">
+                <div id="user-data" Group="userData">
+                  <div class="form-group">
+                    <label for="firstname">First Name <span class="asterisk">*</span></label>
+                    <input type="text" id="firstname" class="form-control" name="firstname" formControlName="firstName"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastname">Last Name <span class="asterisk">*</span></label>
+                    <input type="text" id="lastname" class="form-control" name="lastname" formControlName="lastName"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email <span class="asterisk">*</span></label>
+                    <input type="email" id="email" class="form-control" name="email" formControlName="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" class="form-control" name="phone" formControlName="contact">
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                                <label for="property">Which Property Are You Interested In?</label>
+                                <select 
+                                    name="property" 
+                                    id="property"
+                                    class="form-control" formControlName="property"
+                                        >
+                                    <option value="property1">Property 1</option>
+                                    <option value="property2">Property 2</option>
+                                    <option value="property3">Property 3</option>
+                                    <option value="property4">Property 4</option>
+                                </select>
+                            </div> -->
+                <div class="form-group">
+                  <label for="message">Message:</label>
+                  <textarea name="message" id="message" cols="50" rows="10" class="form-control" formControlName="message">
+                                </textarea>
+                </div>
+                <button type="submit" (click)="enquire()" name="requestSubmit" id="requestSubmit" class="btn btn-primary btn-lg btn-block">SUBMIT</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

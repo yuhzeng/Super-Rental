@@ -1,0 +1,11 @@
+.sender { 
+    float: right;
+};
+
+.receiver { 
+    float: left;
+};
+
+#headingOne {
+    background: black;
+}
